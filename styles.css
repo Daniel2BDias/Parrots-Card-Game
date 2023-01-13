@@ -44,6 +44,14 @@ margin-top: 30px;
     border: 1px solid #99CEA8;
     margin: 20px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carta img:hover {
+cursor: pointer;
 }
 
 .cartaFD {

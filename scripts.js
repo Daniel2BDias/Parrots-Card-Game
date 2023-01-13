@@ -1,0 +1,1 @@
+const qtdCartas = prompt("quantas cartas é o jogo (4-14, somente pares)");
