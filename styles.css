@@ -9,11 +9,11 @@ text-align: center;
 
 p {
 
-font-size: 56px;
+font-size: 4rem;
 font-weight: 700;
 line-height: 66px;
 letter-spacing: -0.004em;
-margin-top: 30px;
+margin: 15px 0;
 
 }
 
@@ -21,44 +21,43 @@ margin-top: 30px;
     width: 80%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    margin: 0 10%;
 }
 
-.ladoA, .ladoB{
-
-        height: 200px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-
-} 
 
 .carta {
-    height: 146px;
     width: 117px;
+    height: 146px;
+    position: relative;
+    margin: 30px;
+  }
+
+.face {
+    width: 100%;
+    height: 100%;
     background-color: #A7E9AF;
-    border: 1px solid #99CEA8;
-    margin: 20px;
-    border-radius: 5px;
+    border: 2px solid #99CEA8;
+    border-radius: 10px;
+    position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
 
-}
+.back-face {
+    transform: rotateY(180deg);
+  }
 
-.carta img:hover {
-cursor: pointer;
-}
+.card .back-face {
+    transform: rotateY(0deg);
+  }
 
-.cartaFD {
-    height: 146px;
-    width: 117px;
-    background-color: #A7E9AF;
-    border: 1px solid #99CEA8;
-    margin: 20px;
-    border-radius: 5px;
-}
+.card .front-face {
+    transform: rotateY(-180deg);
+  }
