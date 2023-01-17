@@ -107,11 +107,24 @@ for(let i = 0; i < qtdCartas; i++){
       verificaCarta();
       fimDoJogo();
     }
-
-    function fimDoJogo(){
-    if (document.querySelectorAll('.acertou').length === qtdCartas){
-      
-      alert(`Você ganhou em ${jogadas.innerHTML} jogadas! A duração do jogo foi de ${timer.innerHTML} segundos!`);
+      let fim = +qtdCartas;
     
-}
+      function fimDoJogo(){
+
+      setTimeout(() => {if (document.querySelectorAll('.vira-carta').length === fim){ 
+
+       alert(`Você ganhou em ${jogadas.innerHTML} jogadas! A duração do jogo foi de ${timer.innerHTML} segundos!`);
+
+    let reinicio = prompt("deseja recomeçar? sim ou não");
+
+    while(reinicio !== "sim" && reinicio !== "não"){
+      prompt("Deseja recomeçar?");
+      reinicio = prompt("Deseja recomeçar? sim ou não");
     }
+
+    if(reinicio === "sim"){
+      location.reload();
+    }
+  }
+}, 1000);
+}

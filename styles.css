@@ -37,6 +37,9 @@ margin: 15px 0;
   .carta:active {
     transform: scale(0.95);
   }
+  .carta:hover{
+    cursor: pointer;
+  }
 
 .face {
     width: 100%;
