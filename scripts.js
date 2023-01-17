@@ -89,7 +89,9 @@ for(let i = 0; i < qtdCartas; i++){
 
     }
     function viraCarta(clicada){
-
+      if(clicada.classList.contains('vira-carta')){
+        return;
+      }
       if(primeira === ""){
       clicada.classList.add('vira-carta');
       primeira = clicada;
