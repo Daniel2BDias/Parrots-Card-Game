@@ -89,14 +89,16 @@ for(let i = 0; i < qtdCartas; i++){
 
     }
     function viraCarta(clicada){
+
       if(clicada.classList.contains('vira-carta')){
         return;
       }
-      if(primeira === ""){
+
       clicada.classList.add('vira-carta');
+
+      if(primeira === ""){
       primeira = clicada;
       } else if (segunda === ""){
-        clicada.classList.add('vira-carta');
         segunda = clicada;
       }
 
@@ -111,9 +113,12 @@ for(let i = 0; i < qtdCartas; i++){
     }
       let fim = +qtdCartas;
     
-      function fimDoJogo(){
+    function fimDoJogo(){
+      
 
       setTimeout(() => {if (document.querySelectorAll('.vira-carta').length === fim){ 
+
+        clearInterval(interval);
 
        alert(`Você ganhou em ${jogadas.innerHTML} jogadas! A duração do jogo foi de ${timer.innerHTML} segundos!`);
 
