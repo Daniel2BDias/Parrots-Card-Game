@@ -12,11 +12,11 @@ const parrots = [
 
 const jogadas = document.getElementById("jogadas");
 
-let qtdCartas = prompt("quantas cartas? 4-14, somente pares");
+let qtdCartas = prompt("quantos pares? 2-7");
 
-while (qtdCartas < 4 || qtdCartas > 14 || qtdCartas % 2 !== 0){
-    prompt("quantas cartas? 4-14, somente pares");
-    qtdCartas = prompt("quantas cartas? 4-14, somente pares");
+while (qtdCartas < 2 || qtdCartas > 7){
+   prompt("quantos pares? 2-7")
+    qtdCartas = prompt("quantos pares? 2-7");
 }
 
 const timer = document.getElementById("timer");
@@ -29,7 +29,7 @@ function contador(){
 }
 
 
- const divided = qtdCartas/2;
+ const divided = qtdCartas;
 
  const slicedParrots = parrots.slice(0, divided);
 
@@ -39,7 +39,7 @@ function contador(){
 
  const shuffled = parrotsFusion.sort(() => Math.random() - 0.5);
 
-for(let i = 0; i < qtdCartas; i++){
+for(let i = 0; i < qtdCartas*2; i++){
 
    board.innerHTML += `<div data-test="card" data-parrot="${shuffled[i]}" class="carta" onClick="viraCarta(this)">
     <div class="front-face face">
@@ -59,7 +59,6 @@ for(let i = 0; i < qtdCartas; i++){
       const verPrimeira = primeira.getAttribute('data-parrot');
       const verSegunda = segunda.getAttribute('data-parrot');
 
-      console.log(verPrimeira, verSegunda)
       if(verPrimeira === verSegunda){
 
         setTimeout(() => {
@@ -93,6 +92,9 @@ for(let i = 0; i < qtdCartas; i++){
       if(clicada.classList.contains('vira-carta')){
         return;
       }
+     if(primeira !== "" && secunda !== ""){
+            return;
+        }
 
       clicada.classList.add('vira-carta');
 
