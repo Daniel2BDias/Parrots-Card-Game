@@ -92,7 +92,7 @@ for(let i = 0; i < qtdCartas*2; i++){
       if(clicada.classList.contains('vira-carta')){
         return;
       }
-     if(primeira !== "" && secunda !== ""){
+     if(primeira !== "" && segunda !== ""){
             return;
         }
 
@@ -113,7 +113,7 @@ for(let i = 0; i < qtdCartas*2; i++){
       verificaCarta();
       fimDoJogo();
     }
-      let fim = +qtdCartas;
+      let fim = +qtdCartas*2;
     
     function fimDoJogo(){
       
@@ -124,16 +124,11 @@ for(let i = 0; i < qtdCartas*2; i++){
 
        alert(`Você ganhou em ${jogadas.innerHTML} jogadas! A duração do jogo foi de ${timer.innerHTML} segundos!`);
 
-    let reinicio = prompt("deseja recomeçar? sim ou não");
+    let reinicio = confirm("deseja recomeçar?");
 
-    while(reinicio !== "sim" && reinicio !== "não"){
-      prompt("Deseja recomeçar?");
-      reinicio = prompt("Deseja recomeçar? sim ou não");
-    }
-
-    if(reinicio === "sim"){
+    if(reinicio){
       location.reload();
-    }
+    };
   }
 }, 1000);
 }
