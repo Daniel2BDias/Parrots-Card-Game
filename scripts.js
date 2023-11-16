@@ -14,7 +14,7 @@ const jogadas = document.getElementById("jogadas");
 
 let qtdCartas = prompt("quantos pares? 2-7");
 
-while (qtdCartas < 2 || qtdCartas > 7) {
+while (qtdCartas < 2 || qtdCartas > 7 || +qtdCartas != qtdCartas) {
   prompt("quantos pares? 2-7");
   qtdCartas = prompt("quantos pares? 2-7");
 }
